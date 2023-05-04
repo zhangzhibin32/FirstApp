@@ -1,6 +1,6 @@
 package com.zzb.system.mapper;
 
-import com.atguigu.model.system.SysUserRole;
+import com.zzb.model.system.SysUserRole;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

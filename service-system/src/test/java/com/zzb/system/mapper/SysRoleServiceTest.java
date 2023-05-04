@@ -1,6 +1,6 @@
 package com.zzb.system.mapper;
 
-import com.atguigu.model.system.SysRole;
+import com.zzb.model.system.SysRole;
 import com.zzb.system.service.SysRoleService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -7,18 +7,15 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>common-log</artifactId>
-    <packaging>war</packaging>
-    <name>common-log Maven Webapp</name>
+    <packaging>jar</packaging>
+    <name>common-log</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!--<scope>provided </scope>-->
         </dependency>
     </dependencies>
-    <build>
-        <finalName>common-log</finalName>
-    </build>
 </project>

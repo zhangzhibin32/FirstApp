@@ -7,7 +7,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>model</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <dependencies>
         <!--lombok用来简化实体类-->
         <dependency>

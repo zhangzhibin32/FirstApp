@@ -7,7 +7,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>common-util</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>com.zzb</groupId>
@@ -32,7 +32,4 @@
             <artifactId>fastjson</artifactId>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>common-util</finalName>
-    </build>
 </project>

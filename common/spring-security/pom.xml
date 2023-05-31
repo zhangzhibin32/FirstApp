@@ -7,8 +7,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>spring-security</artifactId>
-    <packaging>war</packaging>
-    <name>spring-security Maven Webapp</name>
+    <packaging>jar</packaging>
+    <name>spring-security</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
@@ -18,7 +18,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>spring-security</finalName>
-    </build>
 </project>

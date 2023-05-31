@@ -1,7 +1,7 @@
 package com.zzb.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.zzb.model.system.SysMenu;
+import com.zzb.model.system.SysRoleMenu;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 2023-05-08
  */
 @Repository
-public interface SysMenuMapper extends BaseMapper<SysMenu> {
+public interface SysRoleMenuMapper extends BaseMapper<SysRoleMenu> {
 
 }

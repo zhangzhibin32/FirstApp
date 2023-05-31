@@ -4,7 +4,6 @@ package com.zzb.system.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zzb.common.result.Result;
-import com.zzb.model.system.SysRole;
 import com.zzb.model.system.SysUser;
 import com.zzb.model.vo.SysUserQueryVo;
 import com.zzb.system.service.SysUserService;
@@ -74,7 +73,6 @@ public class SysUserController {
     public Result updateStatus(@PathVariable String id,@PathVariable Integer status){
         sysUserService.updateStatus(id,status);
         return Result.ok();
-
     }
 
 

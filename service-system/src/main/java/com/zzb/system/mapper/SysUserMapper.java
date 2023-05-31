@@ -8,6 +8,7 @@ import com.zzb.model.system.SysUser;
 import com.zzb.model.vo.SysRoleQueryVo;
 import com.zzb.model.vo.SysUserQueryVo;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -17,6 +18,8 @@ import org.apache.ibatis.annotations.Param;
  * @author zzb
  * @since 2023-05-06
  */
+@Repository
+
 public interface SysUserMapper extends BaseMapper<SysUser> {
     public IPage<SysUser> selectPage(Page<SysUser> pageParam, @Param("vo") SysUserQueryVo sysUserQueryVo);
 

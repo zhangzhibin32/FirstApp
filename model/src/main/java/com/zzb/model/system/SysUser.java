@@ -1,6 +1,7 @@
 package com.zzb.model.system;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import com.zzb.model.base.BaseEntity;
@@ -52,6 +53,7 @@ public class SysUser extends BaseEntity {
 	@ApiModelProperty(value = "状态（1：正常 0：停用）")
 	@TableField("status")
 	private Integer status;
+
 
 	@TableField(exist = false)
 	private List<SysRole> roleList;

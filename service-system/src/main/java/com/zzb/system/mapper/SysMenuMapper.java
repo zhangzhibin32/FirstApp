@@ -2,7 +2,10 @@ package com.zzb.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zzb.model.system.SysMenu;
+import com.zzb.model.vo.RouterVo;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * <p>
@@ -15,4 +18,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SysMenuMapper extends BaseMapper<SysMenu> {
 
+    List<RouterVo> findMenuListUserID(String id);
 }

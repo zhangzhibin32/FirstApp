@@ -3,10 +3,13 @@ package com.zzb.system.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zzb.model.system.SysMenu;
 import com.zzb.model.system.SysRoleMenu;
+import com.zzb.model.system.SysUserRole;
 import com.zzb.model.vo.AssginMenuVo;
+import com.zzb.model.vo.RouterVo;
 import com.zzb.system.exception.ZBException;
 import com.zzb.system.mapper.SysMenuMapper;
 import com.zzb.system.mapper.SysRoleMenuMapper;
+import com.zzb.system.mapper.SysUserRoleMapper;
 import com.zzb.system.service.SysMenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +17,9 @@ import org.springframework.stereotype.Service;
 import com.zzb.system.utils.MenuHelper;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * <p>
@@ -30,6 +35,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
 
     @Autowired
     private SysRoleMenuMapper sysRoleMenuMapper;
+    @Autowired
+    private SysUserRoleMapper sysUserRoleMapper;
     @Override
     public List<SysMenu> findNodes() {
         List<SysMenu> menuList = baseMapper.selectList(null);
@@ -107,5 +114,38 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             sysRoleMenuMapper.insert(sysRoleMenu);
         }
 
+    }
+
+    @Override
+    public List<RouterVo> getUserMenuList(String id) {
+        /*
+        * admin是超级管理员
+        *
+        * */
+
+        //超级管理员
+        if(id.equals("1")) {
+            baseMapper.selectList(null);
+        }else{
+            List<RouterVo> routerVos=baseMapper.findMenuListUserID(id);
+        }
+        QueryWrapper<SysUserRole> wrapper=new QueryWrapper<>();
+        wrapper.eq("user_id",id);
+        QueryWrapper<SysRoleMenu> menuWrapper=new QueryWrapper<>();
+        List<SysUserRole> sysUserRoles = sysUserRoleMapper.selectList(wrapper);
+        Set<SysRoleMenu> roleMenus=new HashSet<>();
+        for (int i = 0; i < sysUserRoles.size(); i++) {
+            menuWrapper.clear();
+            menuWrapper.eq("role_id",sysUserRoles.get(i).getRoleId());
+            List<SysRoleMenu> sysRoleMenus = sysRoleMenuMapper.selectList(menuWrapper);
+            roleMenus.addAll(sysRoleMenus);
+        }
+        List<RouterVo> roleMenuList=null;
+        return roleMenuList;
+    }
+
+    @Override
+    public List<String> getUserButtonList(String id) {
+        return null;
     }
 }

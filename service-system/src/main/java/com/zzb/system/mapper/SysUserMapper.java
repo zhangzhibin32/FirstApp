@@ -8,6 +8,7 @@ import com.zzb.model.system.SysUser;
 import com.zzb.model.vo.SysRoleQueryVo;
 import com.zzb.model.vo.SysUserQueryVo;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -19,9 +20,9 @@ import org.springframework.stereotype.Repository;
  * @since 2023-05-06
  */
 @Repository
-
 public interface SysUserMapper extends BaseMapper<SysUser> {
     public IPage<SysUser> selectPage(Page<SysUser> pageParam, @Param("vo") SysUserQueryVo sysUserQueryVo);
 
-
+    @Select("SELECT COUNT(*) FROM sys_user WHERE username = #{username}")
+    int existsByUsername(@Param("username")String username);
 }

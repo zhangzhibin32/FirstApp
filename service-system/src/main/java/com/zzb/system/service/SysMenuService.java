@@ -3,6 +3,7 @@ package com.zzb.system.service;
 import com.zzb.model.system.SysMenu;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zzb.model.vo.AssginMenuVo;
+import com.zzb.model.vo.RouterVo;
 
 import java.util.List;
 
@@ -25,4 +26,8 @@ public interface SysMenuService extends IService<SysMenu> {
     List<SysMenu> findMenuByRoleId(String roleId);
 
     void doAssign(AssginMenuVo assginMenuVo);
+
+    List<RouterVo> getUserMenuList(String id);
+
+    List<String> getUserButtonList(String id);
 }

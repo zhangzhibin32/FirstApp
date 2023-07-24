@@ -7,9 +7,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>service-system</artifactId>
-    <packaging>jar</packaging>
-    <name>service-system</name>
-    <version>0.0.1-SNAPSHOT</version>
+<!--    <packaging>jar</packaging>-->
+<!--    <name>service-system</name>-->
+<!--    <version>0.0.1-SNAPSHOT</version>-->
 
     <url>http://maven.apache.org</url>
     <dependencies>
@@ -44,25 +44,13 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
-                <!--该插件主要用途：构建可执行的JAR -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!-- 该项目的启动入口 -->
-                    <mainClass>com.zzb.system.ServiceAuthApplication</mainClass>
-                    <!--<layout></layout>-->
-                </configuration>
-
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
+
 </project>
